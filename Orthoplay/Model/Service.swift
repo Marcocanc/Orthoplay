@@ -9,18 +9,18 @@
 import Foundation
 
 /// An external serivce that the OD-11 can access. E.g. Soundcloud or external URL.
-struct Service: Decodable {
-    let id: Int
-    let name: String
-    let requiresAuthorization: Bool
-    let supportsLinking: Bool
-    let supportsScrubbing: Bool
+public struct Service: Decodable {
+    public let id: Int
+    public let name: String
+    public let requiresAuthorization: Bool
+    public let supportsLiking: Bool
+    public let supportsScrubbing: Bool
     
     private enum CodingKeys: String, CodingKey {
         case id
         case name
         case requiresAuthorization = "requires_authorization"
-        case supportsLinking = "supports_liking"
+        case supportsLiking = "supports_liking"
         case supportsScrubbing = "supports_scrubbing"
     }
 }

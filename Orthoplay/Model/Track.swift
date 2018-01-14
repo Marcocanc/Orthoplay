@@ -25,7 +25,7 @@ public struct Track: Decodable {
     public let uid: String
     
     /// The URL of the Track.
-    public let url: String // Can's use URL here because this can also be the Spotify URI
+    public let url: String // Can't use URL here because this can also be the Spotify URI
     
     
     public let history: Bool?

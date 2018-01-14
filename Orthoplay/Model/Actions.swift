@@ -41,7 +41,7 @@ public struct GroupJoin: Action {
     public let uid: String
 }
 
-/// A ping to keep the connection to the OD-11 alive.
+/// A ping to keep the connection to the OD-11 alive (and monitor latency).
 public struct SpeakerPing: Action {
     public let action: String  = "speaker_ping"
     /// Any value that can be used to identify a corresponding pong.

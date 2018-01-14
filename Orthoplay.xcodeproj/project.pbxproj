@@ -17,6 +17,9 @@
 		A9C930E2200BA53D00EE85B7 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E1200BA53D00EE85B7 /* Group.swift */; };
 		A9C930E4200BAD7700EE85B7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E3200BAD7700EE85B7 /* Track.swift */; };
 		A9C930E6200BB27E00EE85B7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E5200BB27E00EE85B7 /* Response.swift */; };
+		A9C930E8200BB71E00EE85B7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E7200BB71E00EE85B7 /* Client.swift */; };
+		A9C930EA200BB7C800EE85B7 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E9200BB7C800EE85B7 /* Source.swift */; };
+		A9C930ED200BC3F500EE85B7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930EC200BC3F500EE85B7 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		A9C930E1200BA53D00EE85B7 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A9C930E3200BAD7700EE85B7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		A9C930E5200BB27E00EE85B7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A9C930E7200BB71E00EE85B7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A9C930E9200BB7C800EE85B7 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		A9C930EC200BC3F500EE85B7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C930C1200B9BA200EE85B7 /* Orthoplay.h */,
+				A9C930EB200BC3E600EE85B7 /* Utility */,
 				A9C930D8200B9BB400EE85B7 /* Model */,
 				A9C930C2200B9BA200EE85B7 /* Info.plist */,
 			);
@@ -105,7 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				A9C930D9200B9BC800EE85B7 /* Speaker.swift */,
+				A9C930E9200BB7C800EE85B7 /* Source.swift */,
 				A9C930E1200BA53D00EE85B7 /* Group.swift */,
+				A9C930E7200BB71E00EE85B7 /* Client.swift */,
 				A9C930DF200BA25C00EE85B7 /* Service.swift */,
 				A9C930DB200B9F3B00EE85B7 /* Actions.swift */,
 				A9C930DD200B9FC300EE85B7 /* Update.swift */,
@@ -113,6 +122,14 @@
 				A9C930E3200BAD7700EE85B7 /* Track.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C930EB200BC3E600EE85B7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A9C930EC200BC3F500EE85B7 /* Color.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,12 +243,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C930ED200BC3F500EE85B7 /* Color.swift in Sources */,
 				A9C930DA200B9BC800EE85B7 /* Speaker.swift in Sources */,
 				A9C930E0200BA25C00EE85B7 /* Service.swift in Sources */,
 				A9C930DC200B9F3B00EE85B7 /* Actions.swift in Sources */,
 				A9C930E2200BA53D00EE85B7 /* Group.swift in Sources */,
 				A9C930DE200B9FC300EE85B7 /* Update.swift in Sources */,
+				A9C930EA200BB7C800EE85B7 /* Source.swift in Sources */,
 				A9C930E4200BAD7700EE85B7 /* Track.swift in Sources */,
+				A9C930E8200BB71E00EE85B7 /* Client.swift in Sources */,
 				A9C930E6200BB27E00EE85B7 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
