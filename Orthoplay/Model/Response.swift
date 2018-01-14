@@ -76,8 +76,15 @@ public struct GlobalJoinedResponse: Decodable {
 
 public struct Palette: Decodable {
     public let name: String
-    public let backgroundColors: [Color]
-    public let foregroundColors: [Color]
+    public let colors: [(foreground: Color, background: Color)]
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        let foregroundColors = try container.decode([Color].self, forKey: .foregroundColors)
+        let backgroundColors = try container.decode([Color].self, forKey: .backgroundColors)
+        self.colors = zip(foregroundColors, backgroundColors).map { ($0, $1) }
+    }
     
     private enum CodingKeys: String, CodingKey {
         case name

@@ -21,9 +21,40 @@ class OrthoplayTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPalette() {
+        let paletteJSON = """
+            {
+                "bg_colors" : [
+                    935022,
+                    18479,
+                    15158809,
+                    11414311,
+                    1117971,
+                    5000268,
+                    16427286,
+                    16448250
+                ],
+                "fg_colors" : [
+                    1644825,
+                    1644825,
+                    1644825,
+                    1644825,
+                    13224393,
+                    16427286,
+                    1644825,
+                    1644825
+                ],
+                "name" : "orthocolors"
+            }
+        """
+        
+        let jsonDecoder = JSONDecoder()
+        
+        let data = paletteJSON.data(using: .utf8)!
+        let palette = try? jsonDecoder.decode(Palette.self, from: data)
+        XCTAssertNotNil(palette)
+        XCTAssertEqual(palette?.colors.count, 8)
+        XCTAssertEqual(palette?.name, "orthocolors")
     }
     
     func testPerformanceExample() {
