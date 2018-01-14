@@ -10,6 +10,13 @@
 		A9C930C8200B9BA200EE85B7 /* Orthoplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C930BE200B9BA200EE85B7 /* Orthoplay.framework */; };
 		A9C930CD200B9BA200EE85B7 /* OrthoplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930CC200B9BA200EE85B7 /* OrthoplayTests.swift */; };
 		A9C930CF200B9BA200EE85B7 /* Orthoplay.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C930C1200B9BA200EE85B7 /* Orthoplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9C930DA200B9BC800EE85B7 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930D9200B9BC800EE85B7 /* Speaker.swift */; };
+		A9C930DC200B9F3B00EE85B7 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930DB200B9F3B00EE85B7 /* Actions.swift */; };
+		A9C930DE200B9FC300EE85B7 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930DD200B9FC300EE85B7 /* Update.swift */; };
+		A9C930E0200BA25C00EE85B7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930DF200BA25C00EE85B7 /* Service.swift */; };
+		A9C930E2200BA53D00EE85B7 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E1200BA53D00EE85B7 /* Group.swift */; };
+		A9C930E4200BAD7700EE85B7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E3200BAD7700EE85B7 /* Track.swift */; };
+		A9C930E6200BB27E00EE85B7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930E5200BB27E00EE85B7 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		A9C930C7200B9BA200EE85B7 /* OrthoplayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrthoplayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C930CC200B9BA200EE85B7 /* OrthoplayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrthoplayTests.swift; sourceTree = "<group>"; };
 		A9C930CE200B9BA200EE85B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C930D9200B9BC800EE85B7 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		A9C930DB200B9F3B00EE85B7 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		A9C930DD200B9FC300EE85B7 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		A9C930DF200BA25C00EE85B7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A9C930E1200BA53D00EE85B7 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		A9C930E3200BAD7700EE85B7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		A9C930E5200BB27E00EE85B7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C930C1200B9BA200EE85B7 /* Orthoplay.h */,
+				A9C930D8200B9BB400EE85B7 /* Model */,
 				A9C930C2200B9BA200EE85B7 /* Info.plist */,
 			);
 			path = Orthoplay;
@@ -84,6 +99,20 @@
 				A9C930CE200B9BA200EE85B7 /* Info.plist */,
 			);
 			path = OrthoplayTests;
+			sourceTree = "<group>";
+		};
+		A9C930D8200B9BB400EE85B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9C930D9200B9BC800EE85B7 /* Speaker.swift */,
+				A9C930E1200BA53D00EE85B7 /* Group.swift */,
+				A9C930DF200BA25C00EE85B7 /* Service.swift */,
+				A9C930DB200B9F3B00EE85B7 /* Actions.swift */,
+				A9C930DD200B9FC300EE85B7 /* Update.swift */,
+				A9C930E5200BB27E00EE85B7 /* Response.swift */,
+				A9C930E3200BAD7700EE85B7 /* Track.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +177,7 @@
 				TargetAttributes = {
 					A9C930BD200B9BA200EE85B7 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					A9C930C6200B9BA200EE85B7 = {
@@ -196,6 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C930DA200B9BC800EE85B7 /* Speaker.swift in Sources */,
+				A9C930E0200BA25C00EE85B7 /* Service.swift in Sources */,
+				A9C930DC200B9F3B00EE85B7 /* Actions.swift in Sources */,
+				A9C930E2200BA53D00EE85B7 /* Group.swift in Sources */,
+				A9C930DE200B9FC300EE85B7 /* Update.swift in Sources */,
+				A9C930E4200BAD7700EE85B7 /* Track.swift in Sources */,
+				A9C930E6200BB27E00EE85B7 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +371,7 @@
 		A9C930D3200B9BA200EE85B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sh.marco.Orthoplay;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +394,7 @@
 		A9C930D4200B9BA200EE85B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +416,7 @@
 		A9C930D6200B9BA200EE85B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVRLJ7LR8X;
 				INFOPLIST_FILE = OrthoplayTests/Info.plist;
@@ -390,6 +431,7 @@
 		A9C930D7200B9BA200EE85B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVRLJ7LR8X;
 				INFOPLIST_FILE = OrthoplayTests/Info.plist;
