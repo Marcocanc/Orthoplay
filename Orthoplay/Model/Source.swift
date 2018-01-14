@@ -18,7 +18,7 @@ public struct Source: Decodable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         let capContainer = try decoder.container(keyedBy: Capability.self)
-        self.capabilities = try Capability.allCapabilities.filter { try capContainer.decode(Bool.self, forKey: $0) }
+        self.capabilities = try Capability.all.filter { try capContainer.decode(Bool.self, forKey: $0) }
     }
     
     public enum Capability: String, CodingKey {
@@ -29,7 +29,7 @@ public struct Source: Decodable {
         case skip = "supports_skip"
         case trackPosition = "supports_track_position"
         
-        static var allCapabilities: Set<Capability> {
+        static var all: Set<Capability> {
             return [.jumpToTrackURL, .meta, .pause, .seek, .skip, .trackPosition]
         }
     }

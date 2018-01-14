@@ -14,7 +14,7 @@ public struct Speaker: Decodable {
     public let channelSetting: Channel
     public let channelSwitchState: Channel
     public let configured: Bool
-    public let groupId: UUID?
+    public let groupId: String?
     public let ip: String
     public let lineIn: Bool
     public let mac: String

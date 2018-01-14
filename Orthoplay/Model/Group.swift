@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Group: Decodable {
-    public let id: UUID
+    public let id: String
     public let name: String
     
     private enum CodingKeys: String, CodingKey {

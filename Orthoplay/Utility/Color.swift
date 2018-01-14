@@ -14,12 +14,12 @@ public struct Color: Decodable {
     public let green: CGFloat
     public let blue: CGFloat
     public let alpha: CGFloat
-    
+    // OD-11 receives colors as integer values.
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let integer = try container.decode(Int.self)
         // Adapted from https://gist.github.com/benhurott/d0ec9b3eac25b6325db32b8669196140
-        let hex = String(format: "%06x", integer)
+        let hex = String(format: "%06x", integer) // Format as HEX string with left 0-padding
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32

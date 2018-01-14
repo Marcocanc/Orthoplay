@@ -52,12 +52,25 @@ public struct GroupJoinedResponse: Decodable {
 public struct GlobalJoinedResponse: Decodable {
     public let latestRevision: String
     public let mac: String
+    public let orthocloudBaseURL: String
     public let palette: Palette
     public let protocolMajorVersion: Int
     public let protocolMinorVersion: Int
     public let services: [Service]
     public let ssid: String
-    public let sate: [Update]
+    public let state: [Update]
+    
+    private enum CodingKeys: String, CodingKey {
+        case latestRevision = "latest_revision"
+        case mac
+        case orthocloudBaseURL = "orthocloud_base_url"
+        case palette
+        case protocolMajorVersion = "protocol_major_version"
+        case protocolMinorVersion = "protocol_minor_version"
+        case services
+        case ssid
+        case state
+    }
 }
 
 
