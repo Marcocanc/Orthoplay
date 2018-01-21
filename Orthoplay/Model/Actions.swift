@@ -13,6 +13,14 @@ public protocol Action: Encodable {
     var action: String { get }
 }
 
+extension Action {
+    var jsonString: String? {
+        let encoder = JSONEncoder()
+        guard let data = try? encoder.encode(self) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+}
+
 
 public struct Actions {
     /// Join the Orthoplay system
@@ -41,6 +49,14 @@ public struct Actions {
         public let realtimeData: Bool
         /// A unique identifier for the remote
         public let uid: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case action
+            case colorIndex = "color_index"
+            case name
+            case realtimeData = "realtime_data"
+            case uid
+        }
     }
     
     /// A ping to keep the connection to the OD-11 alive (and monitor latency).
@@ -159,16 +175,13 @@ public struct Actions {
     }
     
     // Speaker Actions
+    /// Set the Mute state for the Speaker
     public struct SetMuteState: Action {
         public let action: String = "speaker_set_mute_state"
         public let mac: String
         public let muted: Bool
-        
-        public init(speaker: Speaker, muted: Bool) {
-            self.mac = speaker.mac
-            self.muted = muted
-        }
     }
+    /// Set the Channel for the Speaker
     public struct SetChannel: Action {
         public let action: String = "speaker_set_channel"
         public let channel: Speaker.Channel
@@ -191,6 +204,18 @@ public struct Actions {
         }
     }
     
+    /// Move a speaker to an existing Group
+    public struct MoveToExistingGroup: Action {
+        public let action: String = "speaker_move_to_existing_group"
+        public let groupId: String
+        public let mac: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case action
+            case groupId = "group_id"
+            case mac
+        }
+    }
     /// Change the name of a Speaker Group
     public struct SetGroupName: Action {
         public let action: String = "group_set_name"

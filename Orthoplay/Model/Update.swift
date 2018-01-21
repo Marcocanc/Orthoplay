@@ -11,8 +11,8 @@ import Foundation
 public enum Update: Decodable {
     case speakerAdded(Speaker)
     case speakerGroup(Group)
-    case groupVolumeChanged(VolumeChangeUpdate)
-    case realtime(RealtimeUpdate)
+    case groupVolumeChanged(Updates.VolumeChange)
+    case realtime(Updates.Realtime)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -20,16 +20,16 @@ public enum Update: Decodable {
         
         switch updateIdentifier {
         case .speakerAdded:
-            let speaker = try SpeakerUpdate(from: decoder)
+            let speaker = try Updates.SpeakerAdded(from: decoder)
             self = .speakerAdded(speaker.speaker)
         case .speakerGroup:
             let group = try Group(from: decoder)
             self = .speakerGroup(group)
         case .groupVolumeChanged:
-            let volUpdate = try VolumeChangeUpdate(from: decoder)
+            let volUpdate = try Updates.VolumeChange(from: decoder)
             self = .groupVolumeChanged(volUpdate)
         case .realtime:
-            let realtimeUpdate = try RealtimeUpdate(from: decoder)
+            let realtimeUpdate = try Updates.Realtime(from: decoder)
             self = .realtime(realtimeUpdate)
         }
     }
@@ -47,30 +47,31 @@ public enum Update: Decodable {
 }
 
 
-public struct RealtimeUpdate: Decodable {
-    public let bufferStart: Int
-    public let bufferEnd: Int
-    public let position: Double
+public struct Updates {
+    public struct Realtime: Decodable {
+        public let bufferStart: Int
+        public let bufferEnd: Int
+        public let position: Double
+        
+        private enum CodingKeys: String, CodingKey {
+            case bufferStart = "buf_start"
+            case bufferEnd = "buf_end"
+            case position
+        }
+    }
     
-    private enum CodingKeys: String, CodingKey {
-        case bufferStart = "buf_start"
-        case bufferEnd = "buf_end"
-        case position
+    
+    public struct VolumeChange: Decodable {
+        public let volume: Int
+        public let sid: Int
+        
+        private enum CodingKeys: String, CodingKey {
+            case volume = "vol"
+            case sid
+        }
+    }
+    
+    public struct SpeakerAdded: Decodable {
+        let speaker: Speaker
     }
 }
-
-
-public struct VolumeChangeUpdate: Decodable {
-    public let volume: Int
-    public let sid: Int
-    
-    private enum CodingKeys: String, CodingKey {
-        case volume = "vol"
-        case sid
-    }
-}
-
-internal struct SpeakerUpdate: Decodable {
-    let speaker: Speaker
-}
-

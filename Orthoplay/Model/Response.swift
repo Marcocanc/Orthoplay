@@ -10,6 +10,7 @@ import Foundation
 
 public enum Response: Decodable {
     case speakerPong(Int)
+    case globalJoined(GlobalJoinedResponse)
     case groupJoined(GroupJoinedResponse)
     
     public init(from decoder: Decoder) throws {
@@ -22,6 +23,9 @@ public enum Response: Decodable {
         case .groupJoined:
             let resp = try GroupJoinedResponse(from: decoder)
             self = .groupJoined(resp)
+        case .globalJoined:
+            let resp = try GlobalJoinedResponse(from: decoder)
+            self = .globalJoined(resp)
         }
     }
     
@@ -32,6 +36,7 @@ public enum Response: Decodable {
     private enum ResponseIdentifierKeys: String, Decodable {
         case speakerPong = "speaker_pong"
         case groupJoined = "group_joined"
+        case globalJoined = "global_joined"
     }
     
 }
