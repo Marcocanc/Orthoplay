@@ -13,6 +13,8 @@ public enum Update: Decodable {
     case speakerGroup(Group)
     case groupVolumeChanged(Updates.VolumeChange)
     case realtime(Updates.Realtime)
+    case groupMasterChanged(Updates.GroupMasterChanged)
+    case clientConnected(Updates.ClientConnected)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -31,6 +33,12 @@ public enum Update: Decodable {
         case .realtime:
             let realtimeUpdate = try Updates.Realtime(from: decoder)
             self = .realtime(realtimeUpdate)
+        case .groupMasterChanged:
+            let update = try Updates.GroupMasterChanged(from: decoder)
+            self = .groupMasterChanged(update)
+        case .clientConnected:
+            let update = try Updates.ClientConnected(from: decoder)
+            self = .clientConnected(update)
         }
     }
     
@@ -42,6 +50,8 @@ public enum Update: Decodable {
         case speakerAdded = "speaker_added"
         case speakerGroup = "speaker_group"
         case groupVolumeChanged = "group_volume_changed"
+        case clientConnected = "client_connected"
+        case groupMasterChanged = "group_master_changed"
         case realtime
     }
 }
@@ -72,6 +82,19 @@ public struct Updates {
     }
     
     public struct SpeakerAdded: Decodable {
-        let speaker: Speaker
+        public let speaker: Speaker
+    }
+
+    public struct GroupMasterChanged: Decodable {
+        public let masterIP: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case masterIP = "master_ip"
+        }
+    }
+    
+    public struct ClientConnected: Decodable {
+        let sid: Int
+        let connected: Bool
     }
 }
