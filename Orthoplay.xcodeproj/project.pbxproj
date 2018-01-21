@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A934327F2014EE5A003831E8 /* Orthoplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C930BE200B9BA200EE85B7 /* Orthoplay.framework */; };
 		A94A30E12014D37A00938575 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E02014D37A00938575 /* Message.swift */; };
 		A94A30E32014D6CA00938575 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E22014D6CA00938575 /* MessageTests.swift */; };
 		A94A30E52014DAC900938575 /* SourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E42014DAC900938575 /* SourceTests.swift */; };
-		A9C930C8200B9BA200EE85B7 /* Orthoplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C930BE200B9BA200EE85B7 /* Orthoplay.framework */; };
 		A9C930CD200B9BA200EE85B7 /* OrthoplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930CC200B9BA200EE85B7 /* OrthoplayTests.swift */; };
 		A9C930CF200B9BA200EE85B7 /* Orthoplay.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C930C1200B9BA200EE85B7 /* Orthoplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9C930DA200B9BC800EE85B7 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C930D9200B9BC800EE85B7 /* Speaker.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A9C930C9200B9BA200EE85B7 /* PBXContainerItemProxy */ = {
+		A934327C2014EE55003831E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9C930B5200B9BA200EE85B7 /* Project object */;
 			proxyType = 1;
@@ -71,19 +71,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C930C8200B9BA200EE85B7 /* Orthoplay.framework in Frameworks */,
+				A934327F2014EE5A003831E8 /* Orthoplay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A934327E2014EE5A003831E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9C930B4200B9BA200EE85B7 = {
 			isa = PBXGroup;
 			children = (
 				A9C930C0200B9BA200EE85B7 /* Orthoplay */,
 				A9C930CB200B9BA200EE85B7 /* OrthoplayTests */,
 				A9C930BF200B9BA200EE85B7 /* Products */,
+				A934327E2014EE5A003831E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +195,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A9C930CA200B9BA200EE85B7 /* PBXTargetDependency */,
+				A934327D2014EE55003831E8 /* PBXTargetDependency */,
 			);
 			name = OrthoplayTests;
 			productName = OrthoplayTests;
@@ -207,11 +215,11 @@
 					A9C930BD200B9BA200EE85B7 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					A9C930C6200B9BA200EE85B7 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -283,10 +291,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A9C930CA200B9BA200EE85B7 /* PBXTargetDependency */ = {
+		A934327D2014EE55003831E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A9C930BD200B9BA200EE85B7 /* Orthoplay */;
-			targetProxy = A9C930C9200B9BA200EE85B7 /* PBXContainerItemProxy */;
+			targetProxy = A934327C2014EE55003831E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -320,7 +328,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -380,7 +388,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -409,21 +417,28 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = FVRLJ7LR8X;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Orthoplay/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.marco.Orthoplay;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Debug;
 		};
@@ -432,20 +447,27 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = FVRLJ7LR8X;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Orthoplay/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.marco.Orthoplay;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Release;
 		};
@@ -453,14 +475,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FVRLJ7LR8X;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OrthoplayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.marco.OrthoplayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 			};
 			name = Debug;
 		};
@@ -468,14 +493,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FVRLJ7LR8X;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OrthoplayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.marco.OrthoplayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 			};
 			name = Release;
 		};

@@ -26,7 +26,6 @@ public enum Message: Decodable {
         }
     }
     
-    
     private enum CodingKeys: String, CodingKey {
         case update
         case response
