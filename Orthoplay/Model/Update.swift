@@ -11,12 +11,12 @@ import Foundation
 public enum Update: Decodable {
     case speakerAdded(Speaker)
     case speakerGroup(Group)
-    case groupVolumeChanged
+    case groupVolumeChanged(VolumeChangeUpdate)
     case realtime(RealtimeUpdate)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let updateIdentifier = try container.decode(UpdateIdentifier.self, forKey: .update)
+        let updateIdentifier = try container.decode(UpdateIdentifierKeys.self, forKey: .update)
         
         switch updateIdentifier {
         case .speakerAdded:
@@ -25,6 +25,9 @@ public enum Update: Decodable {
         case .speakerGroup:
             let group = try Group(from: decoder)
             self = .speakerGroup(group)
+        case .groupVolumeChanged:
+            let volUpdate = try VolumeChangeUpdate(from: decoder)
+            self = .groupVolumeChanged(volUpdate)
         case .realtime:
             let realtimeUpdate = try RealtimeUpdate(from: decoder)
             self = .realtime(realtimeUpdate)
@@ -33,12 +36,12 @@ public enum Update: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case update
-        case speaker
     }
     
-    private enum UpdateIdentifier: String, Decodable {
+    private enum UpdateIdentifierKeys: String, Decodable {
         case speakerAdded = "speaker_added"
         case speakerGroup = "speaker_group"
+        case groupVolumeChanged = "group_volume_changed"
         case realtime
     }
 }
@@ -53,6 +56,17 @@ public struct RealtimeUpdate: Decodable {
         case bufferStart = "buf_start"
         case bufferEnd = "buf_end"
         case position
+    }
+}
+
+
+public struct VolumeChangeUpdate: Decodable {
+    public let volume: Int
+    public let sid: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case volume = "vol"
+        case sid
     }
 }
 

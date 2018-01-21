@@ -14,7 +14,7 @@ public enum Response: Decodable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let updateIdentifier = try container.decode(ResponseIdentifier.self, forKey: .update)
+        let updateIdentifier = try container.decode(ResponseIdentifierKeys.self, forKey: .response)
         switch updateIdentifier {
         case .speakerPong:
             let valueWrapped = try ValueWrapper<Int>(from: decoder)
@@ -26,10 +26,10 @@ public enum Response: Decodable {
     }
     
     private enum CodingKeys: String, CodingKey {
-        case update
+        case response
     }
     
-    private enum ResponseIdentifier: String, Decodable {
+    private enum ResponseIdentifierKeys: String, Decodable {
         case speakerPong = "speaker_pong"
         case groupJoined = "group_joined"
     }
@@ -43,7 +43,7 @@ internal struct ValueWrapper<T: Decodable>: Decodable {
 
 public struct GroupJoinedResponse: Decodable {
     public let groupId: String
-    public let sid: String
+    public let sid: Int
     public let sources: [Source]
     public let state: [Update]
 }
@@ -74,21 +74,4 @@ public struct GlobalJoinedResponse: Decodable {
 }
 
 
-public struct Palette: Decodable {
-    public let name: String
-    public let colors: [(foreground: Color, background: Color)]
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-        let foregroundColors = try container.decode([Color].self, forKey: .foregroundColors)
-        let backgroundColors = try container.decode([Color].self, forKey: .backgroundColors)
-        self.colors = zip(foregroundColors, backgroundColors).map { ($0, $1) }
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case name
-        case backgroundColors = "bg_colors"
-        case foregroundColors = "fg_colors"
-    }
-}
+
