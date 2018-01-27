@@ -4,12 +4,6 @@
 [submodule "Carthage/Checkouts/zlib-spm"]
 	path = Carthage/Checkouts/zlib-spm
 	url = https://github.com/daltoniam/zlib-spm.git
-[submodule "Carthage/Checkouts/ReactiveSwift"]
-	path = Carthage/Checkouts/ReactiveSwift
-	url = https://github.com/ReactiveCocoa/ReactiveSwift.git
-[submodule "Carthage/Checkouts/Result"]
-	path = Carthage/Checkouts/Result
-	url = https://github.com/antitypical/Result.git
 [submodule "Carthage/Checkouts/Starscream"]
 	path = Carthage/Checkouts/Starscream
 	url = https://github.com/daltoniam/Starscream.git

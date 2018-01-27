@@ -29,4 +29,29 @@ public struct Track: Decodable {
     
     
     public let history: Bool?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "track_id"
+        case artist
+        case title
+        case duration = "duration_ms"
+        case serviceId = "service_id"
+        case index = "track_index"
+        case uid
+        case url
+        case history
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.artist = try container.decode(String.self, forKey: .artist)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.duration = try container.decode(Double.self, forKey: .duration) / 1000
+        self.serviceId = try container.decode(Int.self, forKey: .serviceId)
+        self.index = try container.decode(Int.self, forKey: .index)
+        self.uid = try container.decode(String.self, forKey: .uid)
+        self.url = try container.decode(String.self, forKey: .url)
+        self.history = try container.decodeIfPresent(Bool.self, forKey: .history)
+    }
 }

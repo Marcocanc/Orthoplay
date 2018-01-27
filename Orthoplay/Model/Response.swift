@@ -10,8 +10,10 @@ import Foundation
 
 public enum Response: Decodable {
     case speakerPong(Int)
-    case globalJoined(GlobalJoinedResponse)
-    case groupJoined(GroupJoinedResponse)
+    case globalJoined(Responses.GlobalJoined)
+    case groupJoined(Responses.GroupJoined)
+    case playlistTracks(Responses.PlaylistTracks)
+    case clientInfo(Responses.ClientInfo)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -21,11 +23,17 @@ public enum Response: Decodable {
             let valueWrapped = try ValueWrapper<Int>(from: decoder)
             self = .speakerPong(valueWrapped.value)
         case .groupJoined:
-            let resp = try GroupJoinedResponse(from: decoder)
+            let resp = try Responses.GroupJoined(from: decoder)
             self = .groupJoined(resp)
         case .globalJoined:
-            let resp = try GlobalJoinedResponse(from: decoder)
+            let resp = try Responses.GlobalJoined(from: decoder)
             self = .globalJoined(resp)
+        case .playlistTracks:
+            let resp = try Responses.PlaylistTracks(from: decoder)
+            self = .playlistTracks(resp)
+        case .clientInfo:
+            let resp = try Responses.ClientInfo(from: decoder)
+            self = .clientInfo(resp)
         }
     }
     
@@ -37,8 +45,64 @@ public enum Response: Decodable {
         case speakerPong = "speaker_pong"
         case groupJoined = "group_joined"
         case globalJoined = "global_joined"
+        case playlistTracks = "playlist_tracks"
+        case clientInfo = "client_info"
     }
     
+}
+
+
+public struct Responses {
+    public struct ClientInfo: Decodable {
+        public let client: Client
+    }
+    public struct PlaylistTracks: Decodable {
+        public let tracks: [Track]
+        public let listRevision: Int
+        
+        private enum CodingKeys: String, CodingKey {
+            case tracks
+            case listRevision = "list_revision"
+        }
+    }
+    public struct GroupJoined: Decodable {
+        public let groupId: String
+        public let sid: Int
+        public let sources: [Source]
+        public let state: [Update]
+        
+        private enum CodingKeys: String, CodingKey {
+            case groupId = "group_id"
+            case sid
+            case sources
+            case state
+        }
+    }
+    
+    
+    public struct GlobalJoined: Decodable {
+        public let latestRevision: String
+        public let mac: String
+        public let orthocloudBaseURL: String
+        public let palette: Palette
+        public let protocolMajorVersion: Int
+        public let protocolMinorVersion: Int
+        public let services: Set<Service>
+        public let ssid: String
+        public let state: [Update]
+        
+        private enum CodingKeys: String, CodingKey {
+            case latestRevision = "latest_revision"
+            case mac
+            case orthocloudBaseURL = "orthocloud_base_url"
+            case palette
+            case protocolMajorVersion = "protocol_major_version"
+            case protocolMinorVersion = "protocol_minor_version"
+            case services
+            case ssid
+            case state
+        }
+    }
 }
 
 internal struct ValueWrapper<T: Decodable>: Decodable {
@@ -46,37 +110,7 @@ internal struct ValueWrapper<T: Decodable>: Decodable {
 }
 
 
-public struct GroupJoinedResponse: Decodable {
-    public let groupId: String
-    public let sid: Int
-    public let sources: [Source]
-    public let state: [Update]
-}
 
-
-public struct GlobalJoinedResponse: Decodable {
-    public let latestRevision: String
-    public let mac: String
-    public let orthocloudBaseURL: String
-    public let palette: Palette
-    public let protocolMajorVersion: Int
-    public let protocolMinorVersion: Int
-    public let services: [Service]
-    public let ssid: String
-    public let state: [Update]
-    
-    private enum CodingKeys: String, CodingKey {
-        case latestRevision = "latest_revision"
-        case mac
-        case orthocloudBaseURL = "orthocloud_base_url"
-        case palette
-        case protocolMajorVersion = "protocol_major_version"
-        case protocolMinorVersion = "protocol_minor_version"
-        case services
-        case ssid
-        case state
-    }
-}
 
 
 

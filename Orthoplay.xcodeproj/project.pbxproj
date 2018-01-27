@@ -11,11 +11,6 @@
 		A93432892014F6B2003831E8 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432862014F6A1003831E8 /* Starscream.framework */; };
 		A934328B2014F6D0003831E8 /* Orthoplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934328A2014F6D0003831E8 /* Orthoplay.swift */; };
 		A93432982014FABC003831E8 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432862014F6A1003831E8 /* Starscream.framework */; };
-		A93432E12015048E003831E8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432D420150478003831E8 /* ReactiveSwift.framework */; };
-		A93432E220150496003831E8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432A42015044D003831E8 /* Result.framework */; };
-		A93432E3201504BD003831E8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432A42015044D003831E8 /* Result.framework */; };
-		A93432E4201504C3003831E8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93432D420150478003831E8 /* ReactiveSwift.framework */; };
-		A93432E620150670003831E8 /* ReactiveWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93432E520150670003831E8 /* ReactiveWebSocket.swift */; };
 		A94A30E12014D37A00938575 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E02014D37A00938575 /* Message.swift */; };
 		A94A30E32014D6CA00938575 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E22014D6CA00938575 /* MessageTests.swift */; };
 		A94A30E52014DAC900938575 /* SourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94A30E42014DAC900938575 /* SourceTests.swift */; };
@@ -56,112 +51,11 @@
 			remoteGlobalIDString = 335FA2021F5DF71D00F6D2EC;
 			remoteInfo = "Starscream Tests";
 		};
-		A93432A32015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480571A9572F5009D7229;
-			remoteInfo = "Result-Mac";
-		};
-		A93432A52015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480671A9572F5009D7229;
-			remoteInfo = "Result-MacTests";
-		};
-		A93432A72015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D454807D1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
-		A93432A92015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480871A957362009D7229;
-			remoteInfo = "Result-iOSTests";
-		};
-		A93432AB2015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE471BA280DC00130C48;
-			remoteInfo = "Result-tvOS";
-		};
-		A93432AD2015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE541BA280E000130C48;
-			remoteInfo = "Result-tvOSTests";
-		};
-		A93432AF2015044D003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432992015044C003831E8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D03579A31B2B788F005D26AE;
-			remoteInfo = "Result-watchOS";
-		};
-		A93432D320150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725EA19E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOS";
-		};
-		A93432D520150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725F519E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOSTests";
-		};
-		A93432D720150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047260C19E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOS";
-		};
-		A93432D920150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047261619E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOSTests";
-		};
-		A93432DB20150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9B315541B3940610001CB9C;
-			remoteInfo = "ReactiveSwift-watchOS";
-		};
-		A93432DD20150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
-			remoteInfo = "ReactiveSwift-tvOS";
-		};
-		A93432DF20150478003831E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
-			remoteInfo = "ReactiveSwift-tvOSTests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A93432802014F6A1003831E8 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = Carthage/Checkouts/Starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
 		A934328A2014F6D0003831E8 /* Orthoplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orthoplay.swift; sourceTree = "<group>"; };
-		A93432992015044C003831E8 /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
-		A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
-		A93432E520150670003831E8 /* ReactiveWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveWebSocket.swift; sourceTree = "<group>"; };
 		A94A30E02014D37A00938575 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A94A30E22014D6CA00938575 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
 		A94A30E42014DAC900938575 /* SourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTests.swift; sourceTree = "<group>"; };
@@ -190,8 +84,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93432892014F6B2003831E8 /* Starscream.framework in Frameworks */,
-				A93432E12015048E003831E8 /* ReactiveSwift.framework in Frameworks */,
-				A93432E220150496003831E8 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +93,6 @@
 			files = (
 				A934327F2014EE5A003831E8 /* Orthoplay.framework in Frameworks */,
 				A93432982014FABC003831E8 /* Starscream.framework in Frameworks */,
-				A93432E4201504C3003831E8 /* ReactiveSwift.framework in Frameworks */,
-				A93432E3201504BD003831E8 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,39 +115,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A934329A2015044C003831E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A93432A42015044D003831E8 /* Result.framework */,
-				A93432A62015044D003831E8 /* Result-MacTests.xctest */,
-				A93432A82015044D003831E8 /* Result.framework */,
-				A93432AA2015044D003831E8 /* Result-iOSTests.xctest */,
-				A93432AC2015044D003831E8 /* Result.framework */,
-				A93432AE2015044D003831E8 /* Result-tvOSTests.xctest */,
-				A93432B02015044D003831E8 /* Result.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A93432CA20150478003831E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A93432D420150478003831E8 /* ReactiveSwift.framework */,
-				A93432D620150478003831E8 /* ReactiveSwiftTests.xctest */,
-				A93432D820150478003831E8 /* ReactiveSwift.framework */,
-				A93432DA20150478003831E8 /* ReactiveSwiftTests.xctest */,
-				A93432DC20150478003831E8 /* ReactiveSwift.framework */,
-				A93432DE20150478003831E8 /* ReactiveSwift.framework */,
-				A93432E020150478003831E8 /* ReactiveSwiftTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A9C930B4200B9BA200EE85B7 = {
 			isa = PBXGroup;
 			children = (
-				A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */,
-				A93432992015044C003831E8 /* Result.xcodeproj */,
 				A93432802014F6A1003831E8 /* Starscream.xcodeproj */,
 				A9C930C0200B9BA200EE85B7 /* Orthoplay */,
 				A9C930CB200B9BA200EE85B7 /* OrthoplayTests */,
@@ -320,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				A9C930EC200BC3F500EE85B7 /* Color.swift */,
-				A93432E520150670003831E8 /* ReactiveWebSocket.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -408,14 +267,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A93432CA20150478003831E8 /* Products */;
-					ProjectRef = A93432C920150478003831E8 /* ReactiveSwift.xcodeproj */;
-				},
-				{
-					ProductGroup = A934329A2015044C003831E8 /* Products */;
-					ProjectRef = A93432992015044C003831E8 /* Result.xcodeproj */;
-				},
-				{
 					ProductGroup = A93432812014F6A1003831E8 /* Products */;
 					ProjectRef = A93432802014F6A1003831E8 /* Starscream.xcodeproj */;
 				},
@@ -441,104 +292,6 @@
 			fileType = wrapper.cfbundle;
 			path = "Starscream Tests.xctest";
 			remoteRef = A93432872014F6A1003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432A42015044D003831E8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = A93432A32015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432A62015044D003831E8 /* Result-MacTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-MacTests.xctest";
-			remoteRef = A93432A52015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432A82015044D003831E8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = A93432A72015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432AA2015044D003831E8 /* Result-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-iOSTests.xctest";
-			remoteRef = A93432A92015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432AC2015044D003831E8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = A93432AB2015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432AE2015044D003831E8 /* Result-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-tvOSTests.xctest";
-			remoteRef = A93432AD2015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432B02015044D003831E8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = A93432AF2015044D003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432D420150478003831E8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = A93432D320150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432D620150478003831E8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = A93432D520150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432D820150478003831E8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = A93432D720150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432DA20150478003831E8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = A93432D920150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432DC20150478003831E8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = A93432DB20150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432DE20150478003831E8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = A93432DD20150478003831E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A93432E020150478003831E8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = A93432DF20150478003831E8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -577,7 +330,6 @@
 				A9C930E4200BAD7700EE85B7 /* Track.swift in Sources */,
 				A94A30E12014D37A00938575 /* Message.swift in Sources */,
 				A9C930E8200BB71E00EE85B7 /* Client.swift in Sources */,
-				A93432E620150670003831E8 /* ReactiveWebSocket.swift in Sources */,
 				A9C930E6200BB27E00EE85B7 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

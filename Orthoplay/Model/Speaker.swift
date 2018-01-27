@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Speaker: Decodable {
+public struct Speaker: Decodable, Hashable, Equatable {
     public let boxSerial: String
     public let channel: Channel
     public let channelSetting: Channel
@@ -57,5 +57,13 @@ public struct Speaker: Decodable {
         case wifiQuality = "wifi_quality"
         case spotifyUser = "spotify_user"
         case spotifyBlob = "spotify_blob"
+    }
+    
+    public var hashValue: Int {
+        return self.boxSerial.hashValue
+    }
+    
+    public static func ==(lhs: Speaker, rhs: Speaker) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

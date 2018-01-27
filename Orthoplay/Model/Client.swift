@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Client: Decodable {
+public struct Client: Decodable, Hashable, Equatable {
     public let colorIndex: Int
     public let connected: Bool
     public let name: String
@@ -23,5 +23,13 @@ public struct Client: Decodable {
         case serial
         case sid
         case uid
+    }
+    
+    public var hashValue: Int {
+        return uid.hashValue
+    }
+    
+    public static func ==(lhs: Client, rhs: Client) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

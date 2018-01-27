@@ -9,7 +9,7 @@
 import Foundation
 
 /// An external serivce that the OD-11 can access. E.g. Soundcloud or external URL.
-public struct Service: Decodable {
+public struct Service: Decodable, Equatable, Hashable {
     public let id: Int
     public let name: String
     public let requiresAuthorization: Bool
@@ -23,4 +23,12 @@ public struct Service: Decodable {
         case supportsLiking = "supports_liking"
         case supportsScrubbing = "supports_scrubbing"
     }
+    
+    public var hashValue: Int {
+        return id
+    }
+    public static func ==(lhs: Service, rhs: Service) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Source: Decodable {
+public struct Source: Decodable, Hashable, Equatable {
     public let id: Int
     public let name: String
     public let capabilities: Set<Capability>
@@ -38,4 +38,14 @@ public struct Source: Decodable {
         case id
         case name
     }
+    
+    public var hashValue: Int {
+        return id.hashValue
+    }
+    
+    public static func ==(lhs: Source, rhs: Source) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    
 }
