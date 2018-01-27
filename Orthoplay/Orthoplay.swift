@@ -10,6 +10,7 @@ import Foundation
 import Starscream
 
 public class Orthoplay: WebSocketDelegate {
+    static let protocolVersion = (major: 0, minor: 4)
     let socket: WebSocket
     let uid: String
     let name: String
@@ -36,7 +37,8 @@ public class Orthoplay: WebSocketDelegate {
     public func websocketDidConnect(socket: WebSocketClient) {
         print("connected")
         self.pingTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(sendPing), userInfo: nil, repeats: true)
-        sendAction(action: Actions.GlobalJoin(protocolMajorVersion: 0, protocolMinorVersion: 4))
+        let version = Orthoplay.protocolVersion
+        sendAction(action: Actions.GlobalJoin(protocolMajorVersion: version.major, protocolMinorVersion: version.minor))
     }
     
     public func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
