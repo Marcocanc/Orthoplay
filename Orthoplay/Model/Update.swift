@@ -108,6 +108,8 @@ public enum Update: Decodable {
         case groupInputSourceChanged = "group_input_source_changed"
         case trackChanged = "track_changed"
         case trackChangedByClient = "track_changed_by_client"
+        
+        // case trackPlaybackFailed = "track_playback_failed"
     }
 }
 
@@ -117,6 +119,17 @@ public enum ListType: String, Decodable {
 }
 
 public struct Updates {
+    public struct PlaybackFailed: Decodable {
+        public let history: Bool
+        public let trackId: Int
+        public let trackIndex: Int
+        
+        private enum CodingKeys: String, CodingKey {
+            case history
+            case trackId = "track_id"
+            case trackIndex = "track_index"
+        }
+    }
     
     public struct ClientLeftGroup: Decodable {
         public let sid: Int

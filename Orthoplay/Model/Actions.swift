@@ -13,6 +13,10 @@ public protocol Action: Encodable {
     var action: String { get }
 }
 
+public protocol Request: Action {
+    associatedtype ResponseType
+}
+
 extension Action {
     var jsonString: String? {
         let encoder = JSONEncoder()
@@ -24,7 +28,8 @@ extension Action {
 
 public struct Actions {
     /// Join the Orthoplay system
-    public struct GlobalJoin: Action {
+    public struct GlobalJoin: Request {
+        public typealias ResponseType = Responses.GlobalJoined
         public let action: String  = "global_join"
         /// Major protocol version.
         public let protocolMajorVersion: Int
@@ -39,7 +44,8 @@ public struct Actions {
     }
     
     /// Let the Orthoremote join the group
-    public struct GroupJoin: Action {
+    public struct GroupJoin: Request {
+        public typealias ResponseType = Responses.GroupJoined
         public let action: String  = "group_join"
         /// The index of the color from the color palette.
         public let colorIndex: Int
@@ -60,10 +66,11 @@ public struct Actions {
     }
     
     /// A ping to keep the connection to the OD-11 alive (and monitor latency).
-    public struct SpeakerPing: Action {
+    public struct SpeakerPing: Request {
+        public typealias ResponseType = Responses.SpeakerPong
         public let action: String  = "speaker_ping"
         /// Any value that can be used to identify a corresponding pong.
-        public let value: String
+        public let value: Int
     }
     
     /// Change the volume of the Group
@@ -136,7 +143,7 @@ public struct Actions {
         public let source: Int
     }
     
-    
+    /// Set the color of the client remote.
     public struct SetClientColor: Action {
         public let action: String = "client_set_color"
         public let colorIndex: Int
@@ -146,11 +153,20 @@ public struct Actions {
         }
     }
     
+    /// Get more information about a client.
+    public struct GetClientInfo: Request {
+        public typealias ResponseType = Responses.ClientInfo
+        public let action: String = "client_set_color"
+        public let uid: String
+    }
+    
     
     
     
     // Playlist
-    public struct PlaylistGetTracks: Action {
+    /// Request a part of the playlist.
+    public struct PlaylistGetTracks: Request {
+        public typealias ResponseType = Responses.PlaylistTracks
         public let action: String = "playlist_get_tracks"
         /// The playlist revision.
         public let revision: Int

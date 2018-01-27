@@ -9,7 +9,7 @@
 import Foundation
 
 public enum Response: Decodable {
-    case speakerPong(Int)
+    case speakerPong(Responses.SpeakerPong)
     case globalJoined(Responses.GlobalJoined)
     case groupJoined(Responses.GroupJoined)
     case playlistTracks(Responses.PlaylistTracks)
@@ -20,8 +20,8 @@ public enum Response: Decodable {
         let updateIdentifier = try container.decode(ResponseIdentifierKeys.self, forKey: .response)
         switch updateIdentifier {
         case .speakerPong:
-            let valueWrapped = try ValueWrapper<Int>(from: decoder)
-            self = .speakerPong(valueWrapped.value)
+            let resp = try Responses.SpeakerPong(from: decoder)
+            self = .speakerPong(resp)
         case .groupJoined:
             let resp = try Responses.GroupJoined(from: decoder)
             self = .groupJoined(resp)
@@ -53,6 +53,11 @@ public enum Response: Decodable {
 
 
 public struct Responses {
+    
+    public struct SpeakerPong: Decodable {
+        public let value: Int
+    }
+    
     public struct ClientInfo: Decodable {
         public let client: Client
     }
